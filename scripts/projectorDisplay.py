@@ -36,10 +36,10 @@ def callback(data):
     blueGoal.x = temp
 
     # Translating point to top left of window
-    redGoal.x = redGoal.x + 0.4
+    redGoal.x = redGoal.x + 0.465
     redGoal.y = redGoal.y + 0.85
 
-    blueGoal.x = blueGoal.x + 0.4
+    blueGoal.x = blueGoal.x + 0.465
     blueGoal.y = blueGoal.y + 0.85
     print redGoal
     # x: -0.17 to -0.85 -->  0 to displayHeight
@@ -49,8 +49,8 @@ def callback(data):
     #displayRed = [(redGoal.y+1)/2*displayWidth, (abs(redGoal.x) - 0.17)/0.68*displayHeight]
     #displayBlue = [(blueGoal.y+0.4)/1.15*displayWidth,(0.68-(abs(blueGoal.x)-0.17))/0.68*displayHeight]
     #displayRed = [(redGoal.y+0.4)/1.15*displayWidth,(0.68-(abs(redGoal.x)-0.17))/0.68*displayHeight]
-    displayBlue = [blueGoal.x/1.15*displayWidth, blueGoal.y/0.68*displayHeight]
-    displayRed = [redGoal.x/1.15*displayWidth, redGoal.y/0.68*displayHeight]
+    displayBlue = [blueGoal.x/1.215*displayWidth, blueGoal.y/0.68*displayHeight]
+    displayRed = [redGoal.x/1.215*displayWidth, redGoal.y/0.68*displayHeight]
 
 
     print displayBlue
