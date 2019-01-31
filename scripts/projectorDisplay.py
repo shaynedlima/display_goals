@@ -76,8 +76,13 @@ def callback(data):
     #displayRed = [(redGoal.y+1)/2*displayWidth, (abs(redGoal.x) - 0.17)/0.68*displayHeight]
     #displayBlue = [(blueGoal.y+0.4)/1.15*displayWidth,(0.68-(abs(blueGoal.x)-0.17))/0.68*displayHeight]
     #displayRed = [(redGoal.y+0.4)/1.15*displayWidth,(0.68-(abs(redGoal.x)-0.17))/0.68*displayHeight]
+<<<<<<< HEAD
     displayBlue = [blueGoal.x/widthProjected*displayWidth, blueGoal.y/heightProjected*displayHeight]
     displayRed = [redGoal.x/widthProjected*displayWidth, redGoal.y/heightProjected*displayHeight]
+=======
+    displayBlue = [blueGoal.x/1.215*displayWidth, blueGoal.y/0.68*displayHeight]
+    displayRed = [redGoal.x/1.215*displayWidth, redGoal.y/0.68*displayHeight]
+>>>>>>> 8a51d5436a80050eefbd56d4d95b4b6f53e7f83f
 
 
     print displayBlue
