@@ -29,6 +29,10 @@ def callback(data):
     #displayWidth = 1920
     #displayHeight = 1080
 
+
+    redRad = data.markers[0].scale.x/2
+    blueRad = data.markers[1].scale.x/2
+
     # Size of projection (region window appears in)
     widthProjected = 1.2
     heightProjected = 0.68
@@ -38,7 +42,7 @@ def callback(data):
     displayWidth = round(widthProjected*scale)
     displayHeight = round(heightProjected*scale)
 
-    goalRad = 0.1 #m
+
     # 1m = 1545.673077 pixels
 
 
@@ -88,18 +92,22 @@ def callback(data):
     	top = Tk()
     	canvas = Canvas(top, width=displayWidth, height=displayHeight, bg='black')
     	canvas.pack(expand=YES, fill=BOTH)
-        radius = goalRad*scale
-    	blue = canvas.create_oval(displayBlue[0]-radius,displayBlue[1]-radius,displayBlue[0]+radius,displayBlue[1]+radius, fill="blue")
+        # Position screen to show up on projector
+        top.geometry('%dx%d+%d+%d' % (displayWidth, displayHeight, displayWidth, 0))
+        redRadius = redRad*scale
+        blueRadius = blueRad*scale
+    	blue = canvas.create_oval(displayBlue[0]-blueRadius,displayBlue[1]-blueRadius,displayBlue[0]+blueRadius,displayBlue[1]+blueRadius, fill="blue")
     	#blue = drawCircle(canvas, displayBlue[0], displayBlue[1], 30, "blue")
     	#red = drawCircle(canvas, displayRed[0], displayRed[1] , 30, "red")
-    	red = canvas.create_oval(displayRed[0]-radius,displayRed[1]-radius,displayRed[0]+radius,displayRed[1]+radius, fill="red")
+    	red = canvas.create_oval(displayRed[0]-redRadius,displayRed[1]-redRadius,displayRed[0]+redRadius,displayRed[1]+redRadius, fill="red")
     	top.update_idletasks()
     	top.update()
     	initialise = 0
     else:
-        radius = goalRad*scale
-    	canvas.coords(red, displayRed[0]-radius,displayRed[1]-radius,displayRed[0]+radius,displayRed[1]+radius)
-    	canvas.coords(blue, displayBlue[0]-radius,displayBlue[1]-radius,displayBlue[0]+radius,displayBlue[1]+radius)
+        redRadius = redRad*scale
+        blueRadius = blueRad*scale
+    	canvas.coords(red, displayRed[0]-redRadius,displayRed[1]-redRadius,displayRed[0]+redRadius,displayRed[1]+redRadius)
+    	canvas.coords(blue, displayBlue[0]-blueRadius,displayBlue[1]-blueRadius,displayBlue[0]+blueRadius,displayBlue[1]+blueRadius)
     	top.update_idletasks()
     	top.update()
 
