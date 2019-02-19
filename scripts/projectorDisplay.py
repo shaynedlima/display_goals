@@ -7,6 +7,8 @@ import numpy as np
 import math
 
 initialise = 1
+red_goal_col = "#77efcd"
+blue_goal_col = "#32aff2"
 
 def rotateClockwise(xy, degrees):
     # Rotate point around origin
@@ -96,10 +98,10 @@ def callback(data):
         top.geometry('%dx%d+%d+%d' % (displayWidth, displayHeight, displayWidth, 0))
         redRadius = redRad*scale
         blueRadius = blueRad*scale
-    	blue = canvas.create_oval(displayBlue[0]-blueRadius,displayBlue[1]-blueRadius,displayBlue[0]+blueRadius,displayBlue[1]+blueRadius, fill="blue")
+    	blue = canvas.create_oval(displayBlue[0]-blueRadius,displayBlue[1]-blueRadius,displayBlue[0]+blueRadius,displayBlue[1]+blueRadius, fill=blue_goal_col)
     	#blue = drawCircle(canvas, displayBlue[0], displayBlue[1], 30, "blue")
     	#red = drawCircle(canvas, displayRed[0], displayRed[1] , 30, "red")
-    	red = canvas.create_oval(displayRed[0]-redRadius,displayRed[1]-redRadius,displayRed[0]+redRadius,displayRed[1]+redRadius, fill="red")
+    	red = canvas.create_oval(displayRed[0]-redRadius,displayRed[1]-redRadius,displayRed[0]+redRadius,displayRed[1]+redRadius, fill=red_goal_col)
     	top.update_idletasks()
     	top.update()
     	initialise = 0
